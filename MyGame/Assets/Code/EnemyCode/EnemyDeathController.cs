@@ -9,4 +9,14 @@ public class EnemyDeathController : MonoBehaviour
         Destroy(gameObject, delay);
         Debug.Log(gameObject + "Умер!");
     }
+
+    public void DestroyAllEnemy(float delay)
+    {
+        GameObject[] taggedObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject obj in taggedObjects)
+        {
+            Destroy(obj, delay);
+
+        }
+    }
 }

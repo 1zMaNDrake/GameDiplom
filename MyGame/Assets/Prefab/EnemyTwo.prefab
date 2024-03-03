@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1809447118910906209}
   - component: {fileID: 2011720438242734499}
   - component: {fileID: 3263459012938977552}
+  - component: {fileID: -8677718077988083061}
   m_Layer: 7
   m_Name: EnemyTwo
   m_TagString: Enemy
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d0e5d08958c77d40b37ec1b7f26fc67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 0
+  _damageAmount: 1
 --- !u!114 &1809447118910906209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,8 +192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc0147c7f110be4b8e3b17ce0bc309b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 4
-  _maximumHealth: 4
+  _currentHealth: 8
+  _maximumHealth: 8
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -222,7 +223,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDamaged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -8677718077988083061}
+        m_TargetAssemblyTypeName: Blink, Assembly-CSharp
+        m_MethodName: DamagedBlink
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2011720438242734499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,3 +261,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _killScore: 10
+--- !u!114 &-8677718077988083061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8519737725430879378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b80ce7f2dde8df4db32b549b188ac80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

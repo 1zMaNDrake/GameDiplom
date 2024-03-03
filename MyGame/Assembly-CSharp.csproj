@@ -59,20 +59,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Code\PlayerCode\OnCollisionUD.cs" />
+    <Compile Include="Assets\Code\Interface\UIController.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityOfPlayer.cs" />
     <Compile Include="Assets\Code\PlayerCode\OnCollisionLR.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyLogic.cs" />
-    <Compile Include="Assets\Code\AttackPlayer\PlayerShoot.cs" />
+    <Compile Include="Assets\Code\PlayerCode\AttackPlayer\Bullet.cs" />
     <Compile Include="Assets\Code\Waves\Wave.cs" />
     <Compile Include="Assets\Code\Waves\EnemySpawn.cs" />
-    <Compile Include="Assets\Code\AttackPlayer\Bullet.cs" />
     <Compile Include="Assets\Code\EnemyCode\ScoreEnemy.cs" />
     <Compile Include="Assets\Code\Interface\ScoreUI.cs" />
-    <Compile Include="Assets\Code\AttackPlayer\BulletDamage.cs" />
+    <Compile Include="Assets\Code\Blink.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityController.cs" />
     <Compile Include="Assets\Code\Health\HealthController.cs" />
+    <Compile Include="Assets\Code\PlayerCode\AttackPlayer\PlayerShoot.cs" />
     <Compile Include="Assets\Code\Interface\ScoreController.cs" />
     <Compile Include="Assets\Code\PlayerCode\PlayerPhysics.cs" />
   </ItemGroup>

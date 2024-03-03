@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     private float _damageAmount;
     public LayerMask whatIsSolid;
 
-    // Update is called once per frame
+   
     void Update()
     {
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.forward, distance, whatIsSolid);
@@ -20,13 +20,15 @@ public class Bullet : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
+ 
                 hitInfo.collider.GetComponent<HealthController>().TakeDamage(_damageAmount);
                 Debug.Log("Враг получил " + _damageAmount + " Урона!");
-               
+                
+
             }
             Destroy(gameObject);
         }
-        transform.Translate(Vector2.up * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector2.up);
     }
 
 }
