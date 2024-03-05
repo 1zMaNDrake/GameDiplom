@@ -14,7 +14,7 @@ public class EnemyAttack : MonoBehaviour
             var healthController = collision.gameObject.GetComponent<HealthController>();
 
             healthController.TakeDamage(_damageAmount);
-            Debug.Log("Игрок получил " + _damageAmount + " Урона!");
+           
         }
     }
 }

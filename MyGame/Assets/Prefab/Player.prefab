@@ -112,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!212 &3043808631417069975
 SpriteRenderer:
@@ -335,7 +335,7 @@ MonoBehaviour:
   offset: -90
   bullet: {fileID: 6824866578028746173, guid: bf0c28d0f56f7654c8a9eb70eeec423c, type: 3}
   shotPoint: {fileID: 240707087382045497}
-  startTimeBtwShots: 0.5
+  startTimeBtwShots: 0.3
 --- !u!114 &1343620031916730180
 MonoBehaviour:
   m_ObjectHideFlags: 0

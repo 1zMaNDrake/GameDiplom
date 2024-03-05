@@ -26,7 +26,7 @@ public class Blink : MonoBehaviour
 
     public void IgnoreCollision(float delay)
     {
-        Invoke("DisableInteraction", 0.2f);
+        Invoke("DisableInteraction", 0);
         Invoke("EnableInteraction", delay);
     }
 

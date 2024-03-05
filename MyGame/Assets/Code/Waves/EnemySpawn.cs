@@ -1,58 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class EnemySpawn : MonoBehaviour
 {
     [SerializeField] private float spawnRate = 1.5f;
-    [SerializeField] private int spawnWave = 5;
     [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private int countEnemy;
+    [SerializeField] private int maxEnemyOnScreen;
 
     public bool canSpawn;
 
-    public static int spawnCount = 0;
+    private Vector2 spawnArea;
 
 
-    public Vector2 spawnArea;
 
     private void Start()
     {
         canSpawn = true;
         StartCoroutine(Spawn());
     }
-    private void Update()
-    {
-        if(spawnCount >= spawnWave)
-        {
-            canSpawn = false;
-        }
-        else
-        {
-            canSpawn = true;
-        }
-    }
 
     private IEnumerator Spawn()
     {
-        WaitForSeconds wait = new(spawnRate);
-        while (canSpawn == true)
+        while (canSpawn && countEnemy > 0)
         {
+          
+            WaitForSeconds wait = new(spawnRate);
             yield return wait;
-            spawnArea = new Vector2(Random.Range(-18f, 18f), Random.Range(-8f, 8f));
-            int rnd = Random.Range(0, enemyPrefabs.Length);;
+
+            spawnArea = new Vector2(Random.Range(-23f, 23f), Random.Range(-12f, 12f));
+            int rnd = Random.Range(0, enemyPrefabs.Length);
 
             GameObject enemyToSpawn = enemyPrefabs[rnd];
 
             Instantiate(enemyToSpawn, spawnArea, Quaternion.identity);
-
-            Debug.Log(enemyPrefabs[rnd] +  "Заспавнен!");
-            Debug.Log(canSpawn);
-
-            Debug.Log(spawnCount);
-
-            spawnCount ++;
-
+            countEnemy--;
         }
-    }
 
+    }
 }

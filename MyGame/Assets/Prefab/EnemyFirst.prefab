@@ -207,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _currentHealth: 2
   _maximumHealth: 2
+  healthUI: {fileID: 0}
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -249,6 +250,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8388705630550427740
 MonoBehaviour:
   m_ObjectHideFlags: 0
