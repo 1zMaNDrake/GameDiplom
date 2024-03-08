@@ -14,7 +14,7 @@ public class EnemyLogic : MonoBehaviour
         targetPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
-    // Update is called once per frame
+  
     void Update()
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, speed * Time.deltaTime);

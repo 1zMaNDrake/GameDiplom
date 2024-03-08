@@ -17,7 +17,7 @@ public class TimerUI : MonoBehaviour
         StartCoroutine(ITimer());
     }
 
-    IEnumerator ITimer()
+    private IEnumerator ITimer()
     {
         while(true)
         {

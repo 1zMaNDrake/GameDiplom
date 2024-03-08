@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4336726476016070263}
   - component: {fileID: 4650778471428671377}
-  - component: {fileID: 4273490145485153837}
-  - component: {fileID: -9193224452116306398}
+  - component: {fileID: -8333944185787504122}
+  - component: {fileID: 826385990107270510}
   m_Layer: 7
   m_Name: WallBasic
   m_TagString: Wallbasic
@@ -86,7 +86,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &4273490145485153837
+--- !u!61 &-8333944185787504122
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +131,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!50 &-9193224452116306398
+--- !u!50 &826385990107270510
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0

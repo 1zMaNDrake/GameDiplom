@@ -60,14 +60,17 @@
   <ItemGroup>
     <Compile Include="Assets\Code\Interface\TimerUI.cs" />
     <Compile Include="Assets\Code\Interface\UIController.cs" />
+    <Compile Include="Assets\Upgrades.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
-    <Compile Include="Assets\Code\EnemyCode\WaveManager.cs" />
+    <Compile Include="Assets\Code\Interface\ChoiceLogic.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityOfPlayer.cs" />
     <Compile Include="Assets\Code\PlayerCode\PlayerShoot.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyLogic.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Player.cs" />
+    <Compile Include="Assets\Code\Interface\WaveUI.cs" />
     <Compile Include="Assets\Code\Interface\HealthUI.cs" />
-    <Compile Include="Assets\Code\Waves\EnemySpawn.cs" />
+    <Compile Include="Assets\Code\PlayerCode\ChangeWeapon.cs" />
     <Compile Include="Assets\Code\EnemyCode\ScoreEnemy.cs" />
     <Compile Include="Assets\Code\Interface\ScoreUI.cs" />
     <Compile Include="Assets\Code\Waves\WaveData.cs" />
@@ -76,7 +79,6 @@
     <Compile Include="Assets\Code\Health\InvincibilityController.cs" />
     <Compile Include="Assets\Code\Health\HealthController.cs" />
     <Compile Include="Assets\Code\Interface\ScoreController.cs" />
-    <Compile Include="Assets\Code\PlayerCode\PlayerPhysics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

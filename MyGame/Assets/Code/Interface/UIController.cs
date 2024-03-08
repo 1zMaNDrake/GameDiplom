@@ -33,15 +33,18 @@ public class UIController : MonoBehaviour
     public void EnableGameWinningMenu()
     {
         gameWinningMenu.SetActive(true);
+        Pause();
     }
 
     public void EnableGameOverMenu()
     {
         gameOverMenu.SetActive(true);
+        Pause();
     }
 
     public void RestartLevel()
     {
+        UnPouse();
         SceneManager.LoadScene(0);
     }
 
