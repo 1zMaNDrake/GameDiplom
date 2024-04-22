@@ -58,7 +58,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 57647a20238855d4f9a24f89d3db2126, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -68,7 +68,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &5514913379399907354
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +178,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f926d7d44b0714393714f44be1503f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _DashBarForegroundImage: {fileID: 0}
   speed: 15
+  canDash: 1
+  isDashing: 0
+  dashingPower: 25
+  dashingTime: 0.5
+  dashingCooldown: 5
+  OnDash:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4592068195640243073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,6 +304,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &5169480322504935254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,9 +345,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: -90
-  bullet: {fileID: 6824866578028746173, guid: bf0c28d0f56f7654c8a9eb70eeec423c, type: 3}
   shotPoint: {fileID: 240707087382045497}
-  startTimeBtwShots: 0.3
+  upgrade: {fileID: 0}
 --- !u!114 &1343620031916730180
 MonoBehaviour:
   m_ObjectHideFlags: 0

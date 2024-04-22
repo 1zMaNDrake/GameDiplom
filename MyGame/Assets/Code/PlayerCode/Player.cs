@@ -9,32 +9,32 @@ public class PlayerPhysics : MonoBehaviour
     [SerializeField]
     private Image _DashBarForegroundImage;
 
-
     private Rigidbody2D rb;
 
-    public float speed;
+    [SerializeField] private float speed;
     private static float AngleX;
     private static float AngleY;
 
+
+    private bool canDash = true;
+    private bool isDashing;
     [Header("DashSettings")]
-    [SerializeField] private bool canDash = true;
-    [SerializeField] private bool isDashing;
-    [SerializeField] private float dashingPower = 25f;
+    [SerializeField] private float dashingPower;
     [SerializeField] private float dashingTime = 0.5f;
     [SerializeField] private float dashingCooldown = 5f;
 
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        AngleX = 1f; 
+        Trajectory();
     }
 
     private void Update()
     {
         if (isDashing)
         {
-                return;
+            return;
         }
         if (canDash == false)
         {
@@ -46,23 +46,20 @@ public class PlayerPhysics : MonoBehaviour
         {
             AngleY = 1f;
         }
-        if (Input.GetMouseButtonDown(1) &&  AngleY != -1f)
+        if (Input.GetMouseButtonDown(1) && AngleY != -1f)
         {
             AngleY = -1f;
         }
-       
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
-
-        Trajectory();
+        Movement();
     }
 
 
     public UnityEvent OnDash;
-
-
     private IEnumerator Dash()
     {
         OnDash.Invoke();
@@ -71,10 +68,9 @@ public class PlayerPhysics : MonoBehaviour
         isDashing = true;
 
         AngleY = 0f;
-        rb.velocity = new Vector2(AngleX, 0) * dashingPower;
+        rb.velocity = new Vector2(transform.localPosition.x * dashingPower, 0f);
 
         yield return new WaitForSeconds(dashingTime);
-        rb.velocity = new Vector2(AngleX, 0);
 
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
@@ -82,10 +78,16 @@ public class PlayerPhysics : MonoBehaviour
     }
 
     private void Trajectory()
-    {    
-        transform.Translate(new Vector3(AngleX, AngleY, 0) * speed * Time.deltaTime, Space.World);
+    {
+        AngleX = Random.value < 0.5f ? -1f : 1f;
+        AngleY = Random.value < 0.5f ? -1f : 1f;
     }
 
+    private void Movement()
+    {
+        Vector2 direction = new Vector2(AngleX, AngleY).normalized;
+        rb.velocity = direction * speed;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
