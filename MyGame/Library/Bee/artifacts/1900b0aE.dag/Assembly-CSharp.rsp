@@ -388,6 +388,7 @@
 "Assets/Code/Health/MedPickUp.cs"
 "Assets/Code/Interface/ChoiceLogic.cs"
 "Assets/Code/Interface/HealthUI.cs"
+"Assets/Code/Interface/MenuManager.cs"
 "Assets/Code/Interface/ScoreController.cs"
 "Assets/Code/Interface/ScoreUI.cs"
 "Assets/Code/Interface/TimerUI.cs"

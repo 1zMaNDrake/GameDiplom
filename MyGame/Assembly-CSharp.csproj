@@ -72,6 +72,7 @@
     <Compile Include="Assets\Code\PlayerCode\Player.cs" />
     <Compile Include="Assets\Code\Interface\WaveUI.cs" />
     <Compile Include="Assets\Code\Interface\HealthUI.cs" />
+    <Compile Include="Assets\Code\Interface\MenuManager.cs" />
     <Compile Include="Assets\Code\PlayerCode\ChangeWeapon.cs" />
     <Compile Include="Assets\Code\EnemyCode\ScoreEnemy.cs" />
     <Compile Include="Assets\Code\Interface\ScoreUI.cs" />
