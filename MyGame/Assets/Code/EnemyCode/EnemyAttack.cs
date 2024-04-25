@@ -7,7 +7,7 @@ public class EnemyAttack : MonoBehaviour
     [SerializeField]
     private float _damageAmount;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<PlayerPhysics>())
         {
@@ -17,4 +17,6 @@ public class EnemyAttack : MonoBehaviour
 
         }
     }
+
+    
 }

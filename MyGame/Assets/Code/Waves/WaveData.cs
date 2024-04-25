@@ -6,6 +6,8 @@ using UnityEngine.Serialization;
 public class WaveData : MonoBehaviour
 {
 
+    [SerializeField] UpgradesManager upgradesManager;
+
     public Wave[] waves;
     public int nextWave = 0;
     private Wave currentWave;
@@ -58,7 +60,7 @@ public class WaveData : MonoBehaviour
         {
             yield return new WaitForSeconds(3);
             nextWave++;
-            CompleteLevel.Invoke();
+            upgradesManager.SuggestUpgrade();
             currentWave = waves[nextWave];
         }
     }
@@ -84,7 +86,7 @@ public class WaveData : MonoBehaviour
     {
         for (int i = 0; i < currentWave.WaveLevel +1; i++)
         {
-            Vector2 spawnArea = new Vector2(Random.Range(-23f, 23f), Random.Range(-10f, 13f));
+            Vector2 spawnArea = new(Random.Range(-23f, 23f), Random.Range(-10f, 13f));
             int rnd = Random.Range(0, currentWave.EnemiesInWave.Length);
             GameObject enemyToSpawn = currentWave.EnemiesInWave[rnd];
             Instantiate(enemyToSpawn, spawnArea, Quaternion.identity);

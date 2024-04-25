@@ -7,16 +7,15 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private float offset;
     [SerializeField] private Transform shotPoint;
 
-    public Upgrades upgrade;
-
-    private GameObject bullet;
+    [SerializeField] private GameObject bullet;
     private float timeBtwShots;
-    private float startTimeBtwShots;
+    private float startTimeBtwShots = 0.45f;
+
 
 
     private void Update()
     {
-        ChangeWeapon();
+        
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
@@ -34,12 +33,6 @@ public class PlayerShoot : MonoBehaviour
         {
             timeBtwShots -= Time.deltaTime;
         }
-    }
-
-    private void ChangeWeapon()
-    {
-        startTimeBtwShots = upgrade.rechargeBullet;
-        bullet = upgrade.updatePrefab;
     }
 
 }

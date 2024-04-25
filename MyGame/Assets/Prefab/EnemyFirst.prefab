@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6855281908029522364}
   - component: {fileID: 8388705630550427740}
   - component: {fileID: -9065847887836756117}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: EnemyFirst
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

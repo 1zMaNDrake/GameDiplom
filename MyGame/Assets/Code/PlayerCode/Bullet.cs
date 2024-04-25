@@ -10,6 +10,8 @@ public class Bullet : MonoBehaviour
     public float distance;
     [SerializeField]
     private float _damageAmount;
+
+    public float rechargeBullet;
     public LayerMask whatIsSolid;
 
    

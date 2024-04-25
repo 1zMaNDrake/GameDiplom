@@ -102,9 +102,10 @@ MonoBehaviour:
   lifeTime: 1
   distance: 1
   _damageAmount: 1
+  rechargeBullet: 0.25
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
 --- !u!61 &2127193832056852533
 BoxCollider2D:
   m_ObjectHideFlags: 0
