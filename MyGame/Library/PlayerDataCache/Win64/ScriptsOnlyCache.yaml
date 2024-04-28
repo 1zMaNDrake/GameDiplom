@@ -1,12 +1,8 @@
 ScriptsOnlyBuild:
   usedScripts:
-    Assembly-CSharp:
-    - Bullet
-    - Upgrades
     Assembly-CSharp.dll:
     - Blink
     - Bullet
-    - ChangeWeapon
     - EnemyAttack
     - EnemyDeathController
     - EnemyLogic
@@ -18,40 +14,37 @@ ScriptsOnlyBuild:
     - MedPickUp
     - MenuManager
     - PlayerPhysics
-    - PlayerShoot
+    - RocketLauncher
+    - RocketUpgrade
     - ScoreController
     - ScoreEnemy
     - ScoreUI
     - Settings
+    - SniperUpgrade
+    - Test
     - TimerUI
     - UIController
-    - Upgrades
+    - UpgradeUI
+    - UpgradesManager
+    - UpgradesUIManager
     - WaveData
     - WaveUI
+    - XBullets
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Animation.Runtime.dll:
-    - UnityEngine.U2D.Animation.BufferManager
     - UnityEngine.U2D.Animation.SpriteSkinComposite
     - UnityEngine.U2D.Animation.SpriteSkinUpdateHelper
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
-    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
-    - UnityEditor.Tilemaps.TilemapEditorToolPreferences
     - UnityEditor.Tilemaps.TilemapPrefabStageHelper
-    Unity.2D.Tilemap.Extras.Editor.dll:
-    - UnityEditor.Tilemaps.GameObjectBrush
-    - UnityEditor.Tilemaps.GroupBrush
-    - UnityEditor.Tilemaps.LineBrush
-    - UnityEditor.Tilemaps.RandomBrush
     Unity.Postprocessing.Runtime.dll:
     - UnityEngine.Rendering.PostProcessing.AmbientOcclusion
     - UnityEngine.Rendering.PostProcessing.AutoExposure
@@ -92,10 +85,12 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   serializedClasses:
@@ -142,6 +137,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Events.PersistentCallGroup
     - UnityEngine.Events.PersistentListenerMode
     - UnityEngine.Events.UnityEvent
+    - UnityEngine.RectOffset
     UnityEngine.TextCoreFontEngineModule:
     - UnityEngine.TextCore.FaceInfo
     - UnityEngine.TextCore.Glyph
@@ -156,6 +152,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
     - UnityEngine.UI.Scrollbar/ScrollEvent
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
     - UnityEngine.UI.Toggle/ToggleEvent
   methodsToPreserve:
@@ -181,77 +178,8 @@ ScriptsOnlyBuild:
     fullTypeName: Settings
     methodName: SetFullscreen
   - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyEnemy
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreEnemy
-    methodName: AllocateScore
-  - assembly: Assembly-CSharp
-    fullTypeName: Blink
-    methodName: DamagedBlink
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyEnemy
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreEnemy
-    methodName: AllocateScore
-  - assembly: Assembly-CSharp
-    fullTypeName: Blink
-    methodName: DamagedBlink
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: RestartLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: CloseChoiceMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: RestartLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: ChangeWeapon
-    methodName: ChangeWeaponForPlayer
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: CloseChoiceMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: EnableChoiceMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreController
-    methodName: AddScore
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: EnableGameWinningMenu
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
-    fullTypeName: UIController
-    methodName: QuitLevel
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreUI
-    methodName: UpdateScore
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.Behaviour
-    methodName: set_enabled
-  - assembly: Assembly-CSharp
     fullTypeName: UIController
     methodName: EnableGameOverMenu
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyAllEnemy
-  - assembly: UnityEngine.CoreModule
-    fullTypeName: UnityEngine.MonoBehaviour
-    methodName: StopAllCoroutines
   - assembly: Assembly-CSharp
     fullTypeName: InvincibilityOfPlayer
     methodName: StartInvincibility
@@ -265,6 +193,30 @@ ScriptsOnlyBuild:
     fullTypeName: HealthUI
     methodName: UpdateHealthBar
   - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreController
+    methodName: AddScore
+  - assembly: Assembly-CSharp
+    fullTypeName: UpgradesUIManager
+    methodName: HideUpgrades
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: EnableGameWinningMenu
+  - assembly: UnityEngine.CoreModule
+    fullTypeName: UnityEngine.Behaviour
+    methodName: set_enabled
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: QuitLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreUI
+    methodName: UpdateScore
+  - assembly: Assembly-CSharp
     fullTypeName: Blink
     methodName: DamagedBlink
   - assembly: Assembly-CSharp
@@ -273,6 +225,27 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Blink
     methodName: IgnoreCollision
+  - assembly: Assembly-CSharp
+    fullTypeName: UpgradeUI
+    methodName: Apply
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -308,7 +281,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1726}
     - Class: 114
-      Script: {instanceID: 2036}
+      Script: {instanceID: 2034}
+    - Class: 114
+      Script: {instanceID: 2110}
     - Class: 114
       Script: {instanceID: 2688}
     - Class: 114
@@ -320,11 +295,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3214}
     - Class: 114
-      Script: {instanceID: 3574}
+      Script: {instanceID: 3266}
     - Class: 114
-      Script: {instanceID: 3612}
+      Script: {instanceID: 3576}
     - Class: 114
-      Script: {instanceID: 3630}
+      Script: {instanceID: 3614}
     - Class: 114
       Script: {instanceID: 3874}
     - Class: 114
@@ -334,45 +309,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4346}
     - Class: 114
-      Script: {instanceID: 4830}
+      Script: {instanceID: 4574}
     - Class: 114
-      Script: {instanceID: 5330}
+      Script: {instanceID: 4752}
     - Class: 114
-      Script: {instanceID: 5566}
+      Script: {instanceID: 4834}
     - Class: 114
-      Script: {instanceID: 5762}
+      Script: {instanceID: 5190}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 5200}
     - Class: 114
-      Script: {instanceID: 6608}
+      Script: {instanceID: 5340}
     - Class: 114
-      Script: {instanceID: 6670}
+      Script: {instanceID: 5576}
     - Class: 114
-      Script: {instanceID: 6702}
+      Script: {instanceID: 5772}
     - Class: 114
-      Script: {instanceID: 6718}
+      Script: {instanceID: 6076}
     - Class: 114
-      Script: {instanceID: 6878}
+      Script: {instanceID: 6160}
     - Class: 114
-      Script: {instanceID: 6988}
+      Script: {instanceID: 6498}
     - Class: 114
-      Script: {instanceID: 7094}
+      Script: {instanceID: 6622}
     - Class: 114
-      Script: {instanceID: 7220}
+      Script: {instanceID: 6684}
     - Class: 114
-      Script: {instanceID: 7268}
+      Script: {instanceID: 6716}
     - Class: 114
-      Script: {instanceID: 7486}
+      Script: {instanceID: 6732}
     - Class: 114
-      Script: {instanceID: 7502}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 8094}
+      Script: {instanceID: 7106}
     - Class: 114
-      Script: {instanceID: 8840}
+      Script: {instanceID: 7232}
     - Class: 114
-      Script: {instanceID: 8914}
+      Script: {instanceID: 7280}
     - Class: 114
-      Script: {instanceID: 9210}
+      Script: {instanceID: 7498}
+    - Class: 114
+      Script: {instanceID: 7514}
+    - Class: 114
+      Script: {instanceID: 8108}
+    - Class: 114
+      Script: {instanceID: 8854}
+    - Class: 114
+      Script: {instanceID: 8922}
+    - Class: 114
+      Script: {instanceID: 8930}
+    - Class: 114
+      Script: {instanceID: 9098}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -406,8 +393,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
-    - Class: 61
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
@@ -425,35 +410,33 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3214}
     - Class: 114
-      Script: {instanceID: 3574}
+      Script: {instanceID: 3576}
     - Class: 114
       Script: {instanceID: 4570}
     - Class: 114
-      Script: {instanceID: 4892}
+      Script: {instanceID: 4898}
     - Class: 114
-      Script: {instanceID: 5216}
+      Script: {instanceID: 5226}
     - Class: 114
-      Script: {instanceID: 5982}
+      Script: {instanceID: 5802}
     - Class: 114
-      Script: {instanceID: 6148}
+      Script: {instanceID: 5994}
     - Class: 114
-      Script: {instanceID: 6486}
+      Script: {instanceID: 6066}
     - Class: 114
-      Script: {instanceID: 6702}
+      Script: {instanceID: 6160}
     - Class: 114
-      Script: {instanceID: 6878}
+      Script: {instanceID: 6498}
     - Class: 114
-      Script: {instanceID: 7094}
+      Script: {instanceID: 6892}
     - Class: 114
-      Script: {instanceID: 7502}
+      Script: {instanceID: 7106}
     - Class: 114
-      Script: {instanceID: 7512}
+      Script: {instanceID: 7514}
     - Class: 114
-      Script: {instanceID: 8870}
+      Script: {instanceID: 7524}
     - Class: 114
-      Script: {instanceID: 9210}
-    - Class: 114
-      Script: {instanceID: 25780}
+      Script: {instanceID: 8884}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -471,6 +454,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -529,12 +518,6 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 752b46cafdba5a9346959d12a9fcf4dd
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ChoiceLogic
-  - hash:
-      serializedVersion: 2
       Hash: ea1569413d805748b7cef2dcb4622c85
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -557,6 +540,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: InvincibilityController
+  - hash:
+      serializedVersion: 2
+      Hash: da51a667fe99a7717545173e26f71d6d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradesUIManager
   - hash:
       serializedVersion: 2
       Hash: 8a43018621cbd48fb5b0aa6f08b63f9d
@@ -727,6 +716,12 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
+      Hash: de3662af38572ec5ca0b4fc58ccfbe7f
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradeUI
+  - hash:
+      serializedVersion: 2
       Hash: be8b55fc8a992741c6269f20cbc719b1
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
@@ -791,12 +786,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ScoreUI
-  - hash:
-      serializedVersion: 2
-      Hash: 49d5beb4890025b78b4c2d0b1e140f27
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PlayerShoot
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -949,6 +938,12 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
+      Hash: 96a9201603aa5398555878715404ec66
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RocketUpgrade
+  - hash:
+      serializedVersion: 2
       Hash: d3550ca29959ded14a048f6dc981f237
     assemblyName: Unity.2D.SpriteShape.Runtime
     namespaceName: 
@@ -973,6 +968,12 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: fb81617984e35386d08bc94838de2e20
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Test
+  - hash:
+      serializedVersion: 2
       Hash: 13c320424e15e88a0527d7477a4188bb
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -991,7 +992,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: d58e6c085c5010dd6ee042258dfb4acc
+      Hash: e86852eb6aba0d99c2001b192306fda9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: PlayerPhysics
@@ -1037,6 +1038,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: MotionBlur
+  - hash:
+      serializedVersion: 2
+      Hash: 5976b64f8b241ceb6c3feb3109c1c282
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RocketLauncher
+  - hash:
+      serializedVersion: 2
+      Hash: b5f918e1aec19b542bde1e79308ad80d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SniperUpgrade
   - hash:
       serializedVersion: 2
       Hash: fcc569162a8d9bd9df34e8c9dee84212
@@ -1115,6 +1128,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Postprocessing.Runtime
     namespaceName: UnityEngine.Rendering.PostProcessing
     className: PostProcessResources
+  - hash:
+      serializedVersion: 2
+      Hash: 06a0d31a3376a4e6384dbb8a3e4ee4f4
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Settings
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1261,13 +1280,19 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 7a688f6d6a5fec8bece85500123fb0a9
+      Hash: 751e5bae2a317288c2ab58d66687092b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: RocketUogrades
+  - hash:
+      serializedVersion: 2
+      Hash: bec29befbae1beebf113194a34849601
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UIController
   - hash:
       serializedVersion: 2
-      Hash: 15eb19f3262b7c392eb5f0290484c597
+      Hash: a73448ab1a355c8501bdf9b41b0bcee8
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: WaveData
@@ -1279,7 +1304,7 @@ ScriptsOnlyBuild:
     className: StateGraphAsset
   - hash:
       serializedVersion: 2
-      Hash: 04d7300646d596acbc2e160c8e921008
+      Hash: 0ea64b1032a9e914cb045d964e034529
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Bullet
@@ -1301,12 +1326,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: AnimatorMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 141badfb4cdf85ab04bbf3460011ba59
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: ChangeWeapon
   - hash:
       serializedVersion: 2
       Hash: eb89cc9c55c1361dc02d4fea220cc023
@@ -1579,10 +1598,22 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: fb81617984e35386d08bc94838de2e20
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: XBullets
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Blink
+  - hash:
+      serializedVersion: 2
+      Hash: 0e9191ed646142b2920d52f1141bc638
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: UpgradesManager
   - hash:
       serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
@@ -1607,12 +1638,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnMouseOverMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 7ffe40347c173af518f5dbd71ce26361
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Upgrades
   - hash:
       serializedVersion: 2
       Hash: a0c3d8ac0230199d5e0acf6626e72964
@@ -1703,12 +1728,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
-  - hash:
-      serializedVersion: 2
-      Hash: 06a0d31a3376a4e6384dbb8a3e4ee4f4
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Settings
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

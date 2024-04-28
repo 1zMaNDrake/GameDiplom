@@ -397,11 +397,15 @@
 "Assets/Code/Interface/Menu UI/Settings.cs"
 "Assets/Code/PlayerCode/Bullet.cs"
 "Assets/Code/PlayerCode/Player.cs"
-"Assets/Code/PlayerCode/PlayerShoot.cs"
+"Assets/Code/PlayerCode/Upgrades/RocketUpgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/Test.cs"
 "Assets/Code/PlayerCode/Upgrades/Upgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/UpgradesManager.cs"
 "Assets/Code/PlayerCode/Upgrades/UpgradesUIManager.cs"
+"Assets/Code/PlayerCode/Upgrades/Weapon/Rockets/RocketLauncher.cs"
+"Assets/Code/PlayerCode/Upgrades/Weapon/Rockets/RocketUogrades.cs"
+"Assets/Code/PlayerCode/Upgrades/Weapon/SniperBullets/Sniper Upgrade.cs"
+"Assets/Code/PlayerCode/Upgrades/Weapon/XBullets/XBullets.cs"
 "Assets/Code/Waves/WaveData.cs"
 -langversion:9.0
 

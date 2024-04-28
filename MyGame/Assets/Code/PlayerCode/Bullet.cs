@@ -5,13 +5,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    public float speed;
-    public float lifeTime;
-    public float distance;
-    [SerializeField]
-    private float _damageAmount;
+    [SerializeField] private float speed;
+    [SerializeField] private float distance;
+    [SerializeField] private float _damageAmount;
 
-    public float rechargeBullet;
     public LayerMask whatIsSolid;
 
    

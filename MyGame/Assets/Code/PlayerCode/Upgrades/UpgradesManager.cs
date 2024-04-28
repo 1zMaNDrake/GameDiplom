@@ -24,7 +24,7 @@ public class UpgradesManager : MonoBehaviour
         }
     }
 
-    public void onUpgradeApplied(Upgrade appliedUpdate)
+    public void OnUpgradeApplied(Upgrade appliedUpdate)
     {
         uiManager.HideUpgrades();
         availableUpdrades.Remove(appliedUpdate);

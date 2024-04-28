@@ -17,7 +17,7 @@ public class Settings : MonoBehaviour
     void Start()
     {
         resolutionDropdown.ClearOptions();
-        List<string> options = new List<string>();
+        List<string> options = new();
         resolutions = Screen.resolutions;
         int currentResolutionIndex = 0;
 

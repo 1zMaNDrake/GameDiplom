@@ -3,7 +3,10 @@ guid: 50f926d7d44b0714393714f44be1503f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _DashBarForegroundImage: {instanceID: 0}
+  - shotPoint: {instanceID: 0}
+  - bullet: {fileID: 6824866578028746173, guid: bf0c28d0f56f7654c8a9eb70eeec423c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

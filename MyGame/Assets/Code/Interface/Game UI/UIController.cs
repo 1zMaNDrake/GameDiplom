@@ -8,18 +8,7 @@ public class UIController : MonoBehaviour
 {
     public GameObject gameOverMenu;
     public GameObject gameWinningMenu;
-    public GameObject choiceMenu;
-    public void EnableChoiceMenu()
-    {
-        choiceMenu.SetActive(true);
-        Pause();
-    }
 
-    public void CloseChoiceMenu()
-    {
-        choiceMenu.SetActive(false);
-        UnPouse();
-    }
     public void Pause()
     {
         Time.timeScale = 0f;

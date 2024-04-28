@@ -15,13 +15,21 @@ public class PlayerPhysics : MonoBehaviour
     private static float AngleX;
     private static float AngleY;
 
+    [Header("ShootSettings")]
+    public GameObject bullet;
 
-    private bool canDash = true;
-    private bool isDashing;
+    private float timeBtwShots;
+    public float startTimeBtwShots = 0.45f;
+
     [Header("DashSettings")]
     [SerializeField] private float dashingPower;
     [SerializeField] private float dashingTime = 0.5f;
     [SerializeField] private float dashingCooldown = 5f;
+
+    private bool canDash = true;
+    private bool isDashing;
+
+
 
 
     private void Awake()
@@ -51,6 +59,11 @@ public class PlayerPhysics : MonoBehaviour
             AngleY = -1f;
         }
 
+        if (Input.GetKey(KeyCode.C))
+        {
+            Shoot();
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
@@ -58,16 +71,46 @@ public class PlayerPhysics : MonoBehaviour
         Movement();
     }
 
+    private void Shoot()
+    {
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + -90f);
+
+        if (timeBtwShots <= 0)
+        {
+            StartCoroutine(ShotProcces());
+            timeBtwShots = startTimeBtwShots;
+        }
+
+        else
+        {
+            timeBtwShots -= Time.deltaTime;
+        }
+    }
+
+    public int bulletCount = 1;
+
+    private IEnumerator ShotProcces()
+    {
+        for (int i = 0; i < bulletCount; i++)
+        {
+            Instantiate(bullet, transform.position, transform.rotation);
+            yield return new WaitForSeconds(0.15f);
+        }
+        
+    }
 
     public UnityEvent OnDash;
     private IEnumerator Dash()
     {
         OnDash.Invoke();
+        AngleY = 0f;
         _DashBarForegroundImage.fillAmount = 0;
         canDash = false;
         isDashing = true;
 
-        AngleY = 0f;
+        
         rb.velocity = new Vector2(transform.localPosition.x * dashingPower, 0f);
 
         yield return new WaitForSeconds(dashingTime);
@@ -100,4 +143,5 @@ public class PlayerPhysics : MonoBehaviour
             AngleX *= -1;
         }
     }
+
 }

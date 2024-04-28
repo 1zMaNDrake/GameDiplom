@@ -59,15 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Code\Interface\Menu UI\MenuManager.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\Rockets\RocketUogrades.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Upgrades\RocketUpgrade.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesUIManager.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\Settings.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityOfPlayer.cs" />
-    <Compile Include="Assets\Code\PlayerCode\PlayerShoot.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\Rockets\RocketLauncher.cs" />
     <Compile Include="Assets\Code\Health\MedPickUp.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\XBullets\XBullets.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesManager.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Test.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\SniperBullets\Sniper Upgrade.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyLogic.cs" />
     <Compile Include="Assets\Code\Health\HealsSpawn.cs" />
     <Compile Include="Assets\Code\PlayerCode\Player.cs" />
