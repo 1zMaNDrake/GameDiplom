@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8680657977874571689}
   - component: {fileID: 5616455632812887966}
+  - component: {fileID: 5536046223552488431}
   m_Layer: 0
   m_Name: SpawnArea
   m_TagString: Untagged
@@ -44,32 +45,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b763e2d2f5620234ba2618753f72ef9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgradesManager: {fileID: 0}
   waves:
   - TimeOfWave: 5
     EnemiesInWave:
     - {fileID: 8519737725430879378, guid: 1d898e97063b62d448d22d69914a2531, type: 3}
     WaveLevel: 0
-  - TimeOfWave: 3
+  - TimeOfWave: 5
     EnemiesInWave:
     - {fileID: 8519737725430879378, guid: c19dc678ead21a648a5c10c6093602e1, type: 3}
     - {fileID: 8519737725430879378, guid: 1d898e97063b62d448d22d69914a2531, type: 3}
+    WaveLevel: 1
+  - TimeOfWave: 5
+    EnemiesInWave:
+    - {fileID: 8519737725430879378, guid: c19dc678ead21a648a5c10c6093602e1, type: 3}
+    - {fileID: 8519737725430879378, guid: 1d898e97063b62d448d22d69914a2531, type: 3}
+    - {fileID: 8519737725430879378, guid: 861fefdc983b1c740bf95be9b7fa576b, type: 3}
     WaveLevel: 2
+  - TimeOfWave: 1
+    EnemiesInWave:
+    - {fileID: 8519737725430879378, guid: edf76eb0bb8dcd84fb493a549156332e, type: 3}
+    WaveLevel: 0
+  nextWave: 0
   timeBetweenEnemies: 1.5
   CompleteLevel:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: EnableChoiceMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScoreController, Assembly-CSharp
         m_MethodName: AddScore
@@ -83,9 +84,9 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
+        m_TargetAssemblyTypeName: UpgradesUIManager, Assembly-CSharp
+        m_MethodName: HideUpgrades
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -133,15 +134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &5536046223552488431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440555307402354499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74d64d371ad1d6643b11212c468d2589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnTimer: 5
+  SpawnChance: 0.5
+  Heals: {fileID: 1709381892579115467, guid: e78eaa620b6ce9f4190f991a884cbb62, type: 3}

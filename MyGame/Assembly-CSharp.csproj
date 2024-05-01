@@ -65,6 +65,7 @@
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesUIManager.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\Settings.cs" />
+    <Compile Include="Assets\Code\EnemyCode\RangeEnemyLogic.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityOfPlayer.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\Rockets\RocketLauncher.cs" />
     <Compile Include="Assets\Code\Health\MedPickUp.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Code\Interface\Game UI\HealthUI.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\TimerUI.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Upgrade.cs" />
+    <Compile Include="Assets\Code\EnemyCode\BulletForEnemy.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\UIController.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\WaveUI.cs" />
     <Compile Include="Assets\Code\EnemyCode\ScoreEnemy.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Assets\Code\Interface\Game UI\ScoreController.cs" />
     <Compile Include="Assets\Code\Health\HealthController.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\UpgradeUI.cs" />
+    <Compile Include="Assets\Code\EnemyCode\Boss\RangeBossLogic.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\ScoreUI.cs" />
   </ItemGroup>
   <ItemGroup>

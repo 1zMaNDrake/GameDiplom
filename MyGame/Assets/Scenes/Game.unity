@@ -1797,6 +1797,7 @@ MonoBehaviour:
   - {fileID: 1127506072}
   - {fileID: 1127506071}
   - {fileID: 1127506073}
+  - {fileID: 1127506073}
   - {fileID: 1127506070}
   player: {fileID: 1785712548}
 --- !u!4 &1127506069
@@ -2028,37 +2029,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTimerRunning: 0
   delta: 1
---- !u!1 &1171555099 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3440555307402354499, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-  m_PrefabInstance: {fileID: 5454291925761616334}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1284581429 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
   m_PrefabInstance: {fileID: 5454291925761616334}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171555099}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b763e2d2f5620234ba2618753f72ef9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1284581430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1171555099}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74d64d371ad1d6643b11212c468d2589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnTimer: 5
-  SpawnChance: 0.5
-  Heals: {fileID: 1709381892579115467, guid: e78eaa620b6ce9f4190f991a884cbb62, type: 3}
 --- !u!1 &1352593282
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,54 +3414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnArea
       objectReference: {fileID: 0}
-    - target: {fileID: 3440555307402354499, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
       propertyPath: upgradesManager
       value: 
       objectReference: {fileID: 1127506068}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[1].WaveLevel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[2].WaveLevel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[0].TimeOfWave
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[1].TimeOfWave
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[2].TimeOfWave
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[2].EnemiesInWave.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[2].EnemiesInWave.Array.data[0]
-      value: 
-      objectReference: {fileID: 8519737725430879378, guid: c19dc678ead21a648a5c10c6093602e1, type: 3}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: waves.Array.data[2].EnemiesInWave.Array.data[1]
-      value: 
-      objectReference: {fileID: 8519737725430879378, guid: 1d898e97063b62d448d22d69914a2531, type: 3}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
       propertyPath: Finish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3490,37 +3427,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1785712548}
     - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: Finish.m_PersistentCalls.m_Calls.Array.data[2].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
       propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 681629184}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1711283236}
     - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1878705169}
     - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: HideUpgrades
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      propertyPath: CompleteLevel.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: UpgradesUIManager, Assembly-CSharp
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1785712548}
     - target: {fileID: 8680657977874571689, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3564,10 +3481,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3440555307402354499, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1284581430}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

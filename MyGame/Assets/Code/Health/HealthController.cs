@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class HealthController : MonoBehaviour
 {
+
     [SerializeField]
     private float _currentHealth;
 

@@ -40,6 +40,7 @@ public class PlayerPhysics : MonoBehaviour
 
     private void Update()
     {
+
         if (isDashing)
         {
             return;

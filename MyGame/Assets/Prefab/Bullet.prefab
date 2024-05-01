@@ -99,10 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  lifeTime: 1
   distance: 1
   _damageAmount: 1
-  rechargeBullet: 0.25
   whatIsSolid:
     serializedVersion: 2
     m_Bits: 384

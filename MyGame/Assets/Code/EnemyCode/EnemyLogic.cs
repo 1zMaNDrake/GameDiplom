@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
-    public float speed = 3;
+    [SerializeField] private float speed = 3;
 
     Transform targetPlayer;
 
@@ -19,9 +19,8 @@ public class EnemyLogic : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, speed * Time.deltaTime);
 
-        Vector3 direction = (targetPlayer.position - transform.position);
-        var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
-        transform.rotation = Quaternion.Euler(0,0,angle);
+        Vector3 difference = (targetPlayer.position - transform.position).normalized;
+        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + -90f);
     }
 }
