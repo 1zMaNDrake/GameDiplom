@@ -8,7 +8,6 @@ public class UpgradeUI : MonoBehaviour
 {
     [SerializeField] private Text title;
     [SerializeField] private Image icon;
-
     [SerializeField] private Text description;
 
     private Action applyAction;

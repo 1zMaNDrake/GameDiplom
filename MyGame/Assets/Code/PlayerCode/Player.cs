@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class PlayerPhysics : MonoBehaviour
 {
 
-    [SerializeField]
-    private Image _DashBarForegroundImage;
+    [SerializeField] private Image _DashBarForegroundImage;
 
     private Rigidbody2D rb;
 
@@ -17,7 +16,6 @@ public class PlayerPhysics : MonoBehaviour
 
     [Header("ShootSettings")]
     public GameObject bullet;
-
     private float timeBtwShots;
     public float startTimeBtwShots = 0.45f;
 
@@ -29,9 +27,6 @@ public class PlayerPhysics : MonoBehaviour
     private bool canDash = true;
     private bool isDashing;
 
-
-
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -40,6 +35,9 @@ public class PlayerPhysics : MonoBehaviour
 
     private void Update()
     {
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + -90f);
 
         if (isDashing)
         {
@@ -74,10 +72,6 @@ public class PlayerPhysics : MonoBehaviour
 
     private void Shoot()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + -90f);
-
         if (timeBtwShots <= 0)
         {
             StartCoroutine(ShotProcces());
@@ -111,7 +105,6 @@ public class PlayerPhysics : MonoBehaviour
         canDash = false;
         isDashing = true;
 
-        
         rb.velocity = new Vector2(transform.localPosition.x * dashingPower, 0f);
 
         yield return new WaitForSeconds(dashingTime);

@@ -59,6 +59,11 @@ public class HealthController : MonoBehaviour
             
         }
     }
+    public void AddMaxHealth(float amountToAdd)
+    {
+        _maximumHealth += amountToAdd;
+        _currentHealth = _maximumHealth;
+    }
 
     public void AddHealth(float amountToAdd)
     {

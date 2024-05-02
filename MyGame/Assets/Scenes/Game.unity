@@ -702,7 +702,7 @@ Camera:
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &519420032
@@ -1773,6 +1773,7 @@ GameObject:
   - component: {fileID: 1127506071}
   - component: {fileID: 1127506072}
   - component: {fileID: 1127506073}
+  - component: {fileID: 1127506074}
   m_Layer: 0
   m_Name: UpgradeManager
   m_TagString: Untagged
@@ -1799,6 +1800,8 @@ MonoBehaviour:
   - {fileID: 1127506073}
   - {fileID: 1127506073}
   - {fileID: 1127506070}
+  - {fileID: 1127506074}
+  - {fileID: 1127506074}
   player: {fileID: 1785712548}
 --- !u!4 &1127506069
 Transform:
@@ -1880,6 +1883,25 @@ MonoBehaviour:
   icon: {fileID: 0}
   description: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
     \u043F\u0430\u0442\u0440\u043E\u043D \u0437\u0430 \u0432\u044B\u0441\u0442\u0440\u0435\u043B"
+--- !u!114 &1127506074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127506067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b12b1d3aaa2075b4aa8b6612dac4d8d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  title: HP UP
+  icon: {fileID: 0}
+  description: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u0430\u0432\u043B\u0438\u0432\u0430\u0435\u0442
+    \u043F\u043E\u043B\u043D\u043E\u0441\u0442\u044C\u044E \u0437\u0434\u043E\u0440\u043E\u0432\u044C\u0435
+    \u0438 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442 \u0435\u0433\u043E
+    \u043D\u0430 5"
+  _healthAmount: 5
 --- !u!1 &1157574786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,6 +2051,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isTimerRunning: 0
   delta: 1
+--- !u!1 &1271693079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1271693081}
+  - component: {fileID: 1271693080}
+  m_Layer: 10
+  m_Name: SawTrap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1271693080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271693079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7766aad4818db43a431395a0a2623d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closedLoop: 0
+  sawPrefab: {fileID: 8519737725430879378, guid: 5a0ce4ac1a22d9848bc45ffddf4330b0, type: 3}
+  sawPoints:
+  - {x: 24.8, y: 14}
+  - {x: 24.8, y: -12}
+  sawSpeed: 5
+--- !u!4 &1271693081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271693079}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.588362, y: -2.4993985, z: -0.25227466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1284581429 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
@@ -3419,6 +3491,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1127506068}
     - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
+      propertyPath: waves.Array.data[0].TimeOfWave
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
+      propertyPath: waves.Array.data[0].EnemiesInWave.Array.data[0]
+      value: 
+      objectReference: {fileID: 8519737725430879378, guid: 1d898e97063b62d448d22d69914a2531, type: 3}
+    - target: {fileID: 5616455632812887966, guid: 9942a2e8be895924b82d834f787452ea, type: 3}
       propertyPath: Finish.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 681629184}
@@ -3496,3 +3576,4 @@ SceneRoots:
   - {fileID: 637087503}
   - {fileID: 1127506069}
   - {fileID: 967761108}
+  - {fileID: 1271693081}

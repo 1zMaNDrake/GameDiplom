@@ -5,6 +5,7 @@ using UnityEngine;
 public class RangeBossLogic : MonoBehaviour
 {
     [SerializeField] private float speed = 1;
+    [SerializeField] private float speedRamming = 10;
     [SerializeField] private float startTimeBtwShots = 0.5f;
     [SerializeField] private GameObject bullet;
     private Transform targetPlayer;
@@ -28,7 +29,7 @@ public class RangeBossLogic : MonoBehaviour
 
         if (state == BossState.Ramming)
         {
-            
+            transform.position = Vector2.MoveTowards(transform.position, targetPlayer.position, speedRamming * Time.deltaTime);
         }
 
         if (state == BossState.Shooting)
@@ -62,7 +63,14 @@ public class RangeBossLogic : MonoBehaviour
     IEnumerator Waiting()
     {
         state = BossState.Waiting;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(Ramming());
+    }
+
+    IEnumerator Ramming()
+    {
+        state = BossState.Ramming;
+        yield return new WaitForSeconds(2f);
         state = BossState.Shooting;
     }
 }
