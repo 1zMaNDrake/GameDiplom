@@ -8,6 +8,7 @@ public class UpgradesUIManager : MonoBehaviour
 {
     [SerializeField] private UpgradeUI upgradeUIPrefab;
     [SerializeField] private UpgradesManager upgradeManager;
+    [SerializeField] private UpgradeManagerEnemy upgradeManagerEnemy;
 
     public void ShowUpgrades(List<Upgrade> upgrades, PlayerPhysics player)
     {
@@ -40,6 +41,7 @@ public class UpgradesUIManager : MonoBehaviour
 
     void OnCLickApply(Upgrade upgrade, PlayerPhysics player)
     {
+        upgradeManagerEnemy.SuggestUpgradeEnemy();
         upgrade.Apply(player);
         upgradeManager.OnUpgradeApplied(upgrade);
     }

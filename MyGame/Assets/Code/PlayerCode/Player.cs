@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerPhysics : MonoBehaviour
 {
+    public int bulletCount = 1;
 
     [SerializeField] private Image _DashBarForegroundImage;
 
@@ -45,8 +46,7 @@ public class PlayerPhysics : MonoBehaviour
         }
         if (canDash == false)
         {
-            if (_DashBarForegroundImage.fillAmount <= 1)
-                _DashBarForegroundImage.fillAmount += 1 / dashingCooldown * Time.deltaTime;
+            if (_DashBarForegroundImage.fillAmount <= 1)  _DashBarForegroundImage.fillAmount += 1 / dashingCooldown * Time.deltaTime;
             else _DashBarForegroundImage.fillAmount = 1;
         }
         if (Input.GetMouseButtonDown(0) && AngleY != 1f)
@@ -83,8 +83,6 @@ public class PlayerPhysics : MonoBehaviour
             timeBtwShots -= Time.deltaTime;
         }
     }
-
-    public int bulletCount = 1;
 
     private IEnumerator ShotProcces()
     {

@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject settingsPanel;
-
-
+    [SerializeField] private GameObject settingsPanel;
+    [SerializeField] private GameObject almanacPanel;
+    [SerializeField] private GameObject aboutGamePanel;
     public void StartGame()
     {
         SceneManager.LoadScene(1);
@@ -20,10 +20,28 @@ public class MenuManager : MonoBehaviour
 
     public void SettingsPanelOpen()
     {
-            settingsPanel.SetActive(true);
+        settingsPanel.SetActive(true);
     }
     public void SettingsPanelClose()
     {
         settingsPanel.SetActive(false);
+    }
+
+    public void AlmanacPanelOpen()
+    {
+        almanacPanel.SetActive(true);
+    }
+    public void AlmanacPanelClose()
+    {
+        almanacPanel.SetActive(false);
+    }
+
+    public void AboutGamePanelOpen()
+    {
+        aboutGamePanel.SetActive(true);
+    }
+    public void AboutGameClose()
+    {
+        aboutGamePanel.SetActive(false);
     }
 }

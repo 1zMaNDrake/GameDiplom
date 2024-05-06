@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Code\Interface\Menu UI\MenuManager.cs" />
+    <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeUIManagerEnemy.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesUIManager.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\Code\Health\InvincibilityOfPlayer.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\Rockets\RocketLauncher.cs" />
     <Compile Include="Assets\Code\Health\MedPickUp.cs" />
+    <Compile Include="Assets\Code\EnemyCode\Upgrades\Weapon\SawAttack.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\XBullets\XBullets.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesManager.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Test.cs" />
@@ -77,16 +79,19 @@
     <Compile Include="Assets\Code\Interface\Game UI\HealthUI.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\TimerUI.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Upgrade.cs" />
-    <Compile Include="Assets\Code\EnemyCode\Upgrades\SawMovement.cs" />
     <Compile Include="Assets\Code\EnemyCode\BulletForEnemy.cs" />
+    <Compile Include="Assets\Code\SetFontFilteringToPoint.cs" />
+    <Compile Include="Assets\Code\EnemyCode\Upgrades\Weapon\SawMovement.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\UIController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\HPUp\HPUp.cs" />
-    <Compile Include="Assets\Code\EnemyCode\Upgrades\SawAttack.cs" />
+    <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeManagerEnemy.cs" />
+    <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeEnemy.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\WaveUI.cs" />
     <Compile Include="Assets\Code\EnemyCode\ScoreEnemy.cs" />
     <Compile Include="Assets\Code\Waves\WaveData.cs" />
     <Compile Include="Assets\Code\Blink.cs" />
     <Compile Include="Assets\Code\PlayerCode\Bullet.cs" />
+    <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\AimsBullets\AutoAim.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\Rockets\RocketUpgrade.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\ScoreController.cs" />

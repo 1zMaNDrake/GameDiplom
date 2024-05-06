@@ -28,6 +28,5 @@ public class UpgradesManager : MonoBehaviour
     {
         uiManager.HideUpgrades();
         availableUpdrades.Remove(appliedUpdate);
-        Time.timeScale = 1;
     }
 }

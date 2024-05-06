@@ -108,8 +108,10 @@
 -define:ENABLE_LEGACY_INPUT_MANAGER
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:UNITY_POST_PROCESSING_STACK_V2
+-define:DOTWEEN
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/Plugins/Demigiant/DOTween/DOTween.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"
@@ -301,6 +303,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.9f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.XRModule.dll"
 -r:"Library/PackageCache/com.unity.collections@1.2.4/Unity.Collections.LowLevel.ILSupport/Unity.Collections.LowLevel.ILSupport.dll"
 -r:"Library/PackageCache/com.unity.visualscripting@1.9.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"Library/Bee/artifacts/1900b0aP.dag/Assembly-CSharp-firstpass.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.2D.Animation.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.2D.Common.Runtime.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.2D.IK.Runtime.ref.dll"
@@ -328,6 +331,8 @@
 "Assets/Code/EnemyCode/EnemyLogic.cs"
 "Assets/Code/EnemyCode/RangeEnemyLogic.cs"
 "Assets/Code/EnemyCode/ScoreEnemy.cs"
+"Assets/Code/EnemyCode/Upgrades/SawAttack.cs"
+"Assets/Code/EnemyCode/Upgrades/SawMovement.cs"
 "Assets/Code/Health/HealsSpawn.cs"
 "Assets/Code/Health/HealthController.cs"
 "Assets/Code/Health/InvincibilityController.cs"
@@ -344,13 +349,13 @@
 "Assets/Code/Interface/Menu UI/Settings.cs"
 "Assets/Code/PlayerCode/Bullet.cs"
 "Assets/Code/PlayerCode/Player.cs"
-"Assets/Code/PlayerCode/Upgrades/RocketUpgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/Test.cs"
 "Assets/Code/PlayerCode/Upgrades/Upgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/UpgradesManager.cs"
 "Assets/Code/PlayerCode/Upgrades/UpgradesUIManager.cs"
+"Assets/Code/PlayerCode/Upgrades/Weapon/HPUp/HPUp.cs"
 "Assets/Code/PlayerCode/Upgrades/Weapon/Rockets/RocketLauncher.cs"
-"Assets/Code/PlayerCode/Upgrades/Weapon/Rockets/RocketUogrades.cs"
+"Assets/Code/PlayerCode/Upgrades/Weapon/Rockets/RocketUpgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/Weapon/SniperBullets/Sniper Upgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/Weapon/XBullets/XBullets.cs"
 "Assets/Code/Waves/WaveData.cs"

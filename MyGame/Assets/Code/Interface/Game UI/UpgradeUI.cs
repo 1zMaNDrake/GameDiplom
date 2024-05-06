@@ -15,10 +15,11 @@ public class UpgradeUI : MonoBehaviour
     {
         this.title.text = title;
         this.icon.sprite = artwork;
-        this.description.text = description;   
+        this.description.text = description;
         this.applyAction = onApply;
 
     }
+
 
     public void Apply()
     {
