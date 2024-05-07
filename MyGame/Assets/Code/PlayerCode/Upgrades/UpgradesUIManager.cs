@@ -6,6 +6,7 @@ using System.Linq;
 
 public class UpgradesUIManager : MonoBehaviour
 {
+
     [SerializeField] private UpgradeUI upgradeUIPrefab;
     [SerializeField] private UpgradesManager upgradeManager;
     [SerializeField] private UpgradeManagerEnemy upgradeManagerEnemy;

@@ -59,8 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Code\Interface\Menu UI\MenuManager.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\ItemsUIManager.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\Enemies.cs" />
     <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeUIManagerEnemy.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\AlmanacManager.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesUIManager.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\Settings.cs" />
@@ -71,6 +74,7 @@
     <Compile Include="Assets\Code\EnemyCode\Upgrades\Weapon\SawAttack.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\XBullets\XBullets.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesManager.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\Enemy.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Test.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\SniperBullets\Sniper Upgrade.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyLogic.cs" />
@@ -88,6 +92,7 @@
     <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeEnemy.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\WaveUI.cs" />
     <Compile Include="Assets\Code\EnemyCode\ScoreEnemy.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\ItemsUI.cs" />
     <Compile Include="Assets\Code\Waves\WaveData.cs" />
     <Compile Include="Assets\Code\Blink.cs" />
     <Compile Include="Assets\Code\PlayerCode\Bullet.cs" />
