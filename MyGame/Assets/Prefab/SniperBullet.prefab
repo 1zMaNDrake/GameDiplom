@@ -99,12 +99,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  lifeTime: 1
   distance: 4
   _damageAmount: 8
   whatIsSolid:
     serializedVersion: 2
-    m_Bits: 384
+    m_Bits: 1408
 --- !u!61 &2127193832056852533
 BoxCollider2D:
   m_ObjectHideFlags: 0

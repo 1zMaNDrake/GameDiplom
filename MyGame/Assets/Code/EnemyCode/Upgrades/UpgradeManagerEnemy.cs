@@ -20,6 +20,10 @@ public class UpgradeManagerEnemy : MonoBehaviour
         {
             uiManager.ShowUpgrades(availableUpdrades);
         }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 
     public void OnUpgradeApplied(UpgradeEnemy appliedUpdateEnemy)

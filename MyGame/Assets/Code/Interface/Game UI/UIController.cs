@@ -34,7 +34,7 @@ public class UIController : MonoBehaviour
     public void RestartLevel()
     {
         UnPouse();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     public void QuitLevel()

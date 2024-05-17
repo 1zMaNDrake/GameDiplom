@@ -12,8 +12,8 @@ public class PlayerPhysics : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField] private float speed;
-    private static float AngleX;
-    private static float AngleY;
+    private float AngleX;
+    private float AngleY;
 
     [Header("ShootSettings")]
     public GameObject bullet;

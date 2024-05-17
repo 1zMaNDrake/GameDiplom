@@ -64,6 +64,7 @@
     <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeUIManagerEnemy.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\AlmanacManager.cs" />
+    <Compile Include="Assets\Code\EnemyCode\EnemyPatrolLogic.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesUIManager.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\Settings.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Code\Blink.cs" />
     <Compile Include="Assets\Code\PlayerCode\Bullet.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\AimsBullets\AutoAim.cs" />
+    <Compile Include="Assets\Code\EnemyCode\BounceEnemyLogic.cs" />
     <Compile Include="Assets\Code\Health\InvincibilityController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\Rockets\RocketUpgrade.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\ScoreController.cs" />

@@ -7,6 +7,11 @@ public class WaveData : MonoBehaviour
 {
 
     [SerializeField] UpgradesManager upgradesManager;
+    [Header("AreaSettings")]
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minY;
+    [SerializeField] private float maxY;
 
     public Wave[] waves;
     public int nextWave = 0;
@@ -86,7 +91,7 @@ public class WaveData : MonoBehaviour
     {
         for (int i = 0; i < currentWave.WaveLevel +1; i++)
         {
-            Vector2 spawnArea = new(Random.Range(-23f, 23f), Random.Range(-10f, 13f));
+            Vector2 spawnArea = new(Random.Range(minX, maxX), Random.Range(minY, maxY));
             int rnd = Random.Range(0, currentWave.EnemiesInWave.Length);
             GameObject enemyToSpawn = currentWave.EnemiesInWave[rnd];
             Instantiate(enemyToSpawn, spawnArea, Quaternion.identity);
