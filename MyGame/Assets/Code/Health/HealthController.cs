@@ -12,6 +12,21 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private float _maximumHealth;
 
+    private SpriteRenderer _spriteRenderer;
+    private Color _startColor;
+
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _startColor = _spriteRenderer.color;
+    }
+
+    private void UpdateSpriteColor()
+    {
+        float progress = 1f - RemainingHealthPercentage;
+        _spriteRenderer.color = Color.LerpUnclamped(_startColor, Color.black, progress);
+    }
+
     public float RemainingHealthPercentage
     {
         get
@@ -58,12 +73,14 @@ public class HealthController : MonoBehaviour
             OnDamaged.Invoke();
             
         }
+        UpdateSpriteColor();
     }
     public void AddMaxHealth(float amountToAdd)
     {
         _maximumHealth += amountToAdd;
         _currentHealth = _maximumHealth;
         OnHealthChanged.Invoke();
+        UpdateSpriteColor();
     }
 
     public void AddHealth(float amountToAdd)
@@ -81,5 +98,6 @@ public class HealthController : MonoBehaviour
         {
             _currentHealth = _maximumHealth;
         }
+        UpdateSpriteColor();
     }
 }

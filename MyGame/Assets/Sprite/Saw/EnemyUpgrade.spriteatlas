@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: EnemyUpgrade
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 2dd1926697e3e82419354cd0d3ec61d6, type: 3}
+    - {fileID: 2800000, guid: f3922c1c13ac424448ddea9b3d4712fa, type: 3}
+    - {fileID: 2800000, guid: ae7199e2476518c46b7c744276f34744, type: 3}
+    - {fileID: 2800000, guid: 585a0e6f76ddaec4c92361340430ae56, type: 3}
+    - {fileID: 2800000, guid: 651e2f6e92890474092eb43c8f118fde, type: 3}
+    - {fileID: 2800000, guid: d7afe187ee5e539499301ac7ddd68e4f, type: 3}
+    - {fileID: 2800000, guid: efb87e3f3df5c3a459b6ee32c6c8c599, type: 3}
+    - {fileID: 2800000, guid: 54473b154a6f79a42be878cb7d1d8668, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+    packedSpriteRenderDataKeys:
+    - ae7199e2476518c46b7c744276f34744: 21300000
+    - 54473b154a6f79a42be878cb7d1d8668: 21300000
+    - 2dd1926697e3e82419354cd0d3ec61d6: 21300000
+    - d7afe187ee5e539499301ac7ddd68e4f: 21300000
+    - f3922c1c13ac424448ddea9b3d4712fa: 21300000
+    - 651e2f6e92890474092eb43c8f118fde: 21300000
+    - efb87e3f3df5c3a459b6ee32c6c8c599: 21300000
+    - 585a0e6f76ddaec4c92361340430ae56: 21300000
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: ae7199e2476518c46b7c744276f34744, type: 3}
+  - {fileID: 21300000, guid: 54473b154a6f79a42be878cb7d1d8668, type: 3}
+  - {fileID: 21300000, guid: 2dd1926697e3e82419354cd0d3ec61d6, type: 3}
+  - {fileID: 21300000, guid: d7afe187ee5e539499301ac7ddd68e4f, type: 3}
+  - {fileID: 21300000, guid: f3922c1c13ac424448ddea9b3d4712fa, type: 3}
+  - {fileID: 21300000, guid: 651e2f6e92890474092eb43c8f118fde, type: 3}
+  - {fileID: 21300000, guid: efb87e3f3df5c3a459b6ee32c6c8c599, type: 3}
+  - {fileID: 21300000, guid: 585a0e6f76ddaec4c92361340430ae56, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 2
+  - 7
+  - 0
+  - 5
+  - 1
+  - 4
+  - 6
+  - 3
+  m_RenderDataMap: {}
+  m_Tag: EnemyUpgrade
+  m_IsVariant: 0
