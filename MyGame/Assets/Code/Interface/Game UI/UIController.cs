@@ -8,6 +8,22 @@ public class UIController : MonoBehaviour
 {
     public GameObject gameOverMenu;
     public GameObject gameWinningMenu;
+    public GameObject PauseMenu;
+
+    private void Update()
+    {
+        if (Time.timeScale != 0)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                EnablePause();
+            }
+        }
+        else
+        {
+            return;
+        }
+    }
 
     public void Pause()
     {
@@ -17,6 +33,25 @@ public class UIController : MonoBehaviour
     public void UnPouse()
     {
         Time.timeScale = 1f;
+    }
+
+    public void MenuBack()
+    {
+        UnPouse();
+        SceneManager.LoadScene(0);
+        AudioManager.Instance.PlayMusic("Menu");
+    }
+    public void EnablePause()
+    {
+        PauseMenu.SetActive(true);
+        Pause();
+    }
+
+
+    public void DisablePause()
+    {
+        PauseMenu.SetActive(false);
+        UnPouse();
     }
 
     public void EnableGameWinningMenu()
@@ -35,6 +70,7 @@ public class UIController : MonoBehaviour
     {
         UnPouse();
         SceneManager.LoadScene(1);
+        
     }
 
     public void QuitLevel()

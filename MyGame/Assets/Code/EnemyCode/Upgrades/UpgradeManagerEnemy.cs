@@ -28,6 +28,7 @@ public class UpgradeManagerEnemy : MonoBehaviour
 
     public void OnUpgradeApplied(UpgradeEnemy appliedUpdateEnemy)
     {
+        AudioManager.Instance.PlaySFX("UpgradeEnemyPick");
         uiManager.HideUpgrades();
         availableUpdrades.Remove(appliedUpdateEnemy);
         Time.timeScale = 1f;

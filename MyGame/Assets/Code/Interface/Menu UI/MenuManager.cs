@@ -11,6 +11,7 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene(1);
+        AudioManager.Instance.PlayMusic("Game");
     }
 
     public void Exit()

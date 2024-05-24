@@ -2,13 +2,16 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AlmanacManager
+    - AudioManager
     - Blink
+    - BounceEnemyLogic
     - Bullet
     - BulletForEnemy
     - Enemies
     - EnemyAttack
     - EnemyDeathController
     - EnemyLogic
+    - EnemyPatrolLogic
     - HPUp
     - HealsSpawn
     - HealthController
@@ -29,7 +32,6 @@ ScriptsOnlyBuild:
     - ScoreController
     - ScoreEnemy
     - ScoreUI
-    - SetFontFilteringToPoint
     - Settings
     - SniperUpgrade
     - TimerUI
@@ -98,8 +100,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
-    Unity.Timeline.Editor.dll:
-    - TimelinePreferences
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -121,6 +127,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
   serializedClasses:
     Assembly-CSharp:
+    - Sound
     - WaveData/Wave
     DOTween:
     - DG.Tweening.Core.DOTweenSettings/ModulesSetup
@@ -189,6 +196,12 @@ ScriptsOnlyBuild:
     fullTypeName: ItemsUI
     methodName: Click
   - assembly: Assembly-CSharp
+    fullTypeName: Settings
+    methodName: SetMusic
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings
+    methodName: MuteMusic
+  - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: AboutGamePanelOpen
   - assembly: Assembly-CSharp
@@ -198,11 +211,17 @@ ScriptsOnlyBuild:
     fullTypeName: MenuManager
     methodName: AboutGameClose
   - assembly: Assembly-CSharp
+    fullTypeName: Settings
+    methodName: SetSFX
+  - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: SettingsPanelOpen
   - assembly: Assembly-CSharp
     fullTypeName: AlmanacManager
     methodName: ShowItems
+  - assembly: Assembly-CSharp
+    fullTypeName: Settings
+    methodName: MuteSFX
   - assembly: Assembly-CSharp
     fullTypeName: MenuManager
     methodName: StartGame
@@ -249,50 +268,80 @@ ScriptsOnlyBuild:
     fullTypeName: HealthUI
     methodName: UpdateHealthBar
   - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyEnemy
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreEnemy
-    methodName: AllocateScore
-  - assembly: Assembly-CSharp
-    fullTypeName: Blink
-    methodName: DamagedBlink
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyEnemy
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreEnemy
-    methodName: AllocateScore
-  - assembly: Assembly-CSharp
-    fullTypeName: Blink
-    methodName: DamagedBlink
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyEnemy
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreEnemy
-    methodName: AllocateScore
-  - assembly: Assembly-CSharp
-    fullTypeName: Blink
-    methodName: DamagedBlink
-  - assembly: Assembly-CSharp
-    fullTypeName: EnemyDeathController
-    methodName: DestroyEnemy
-  - assembly: Assembly-CSharp
-    fullTypeName: ScoreEnemy
-    methodName: AllocateScore
-  - assembly: Assembly-CSharp
-    fullTypeName: Blink
-    methodName: DamagedBlink
+    fullTypeName: UpgradeUI
+    methodName: Apply
   - assembly: Assembly-CSharp
     fullTypeName: UpgradeUI
     methodName: Apply
   - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: EnemyDeathController
+    methodName: DestroyEnemy
+  - assembly: Assembly-CSharp
+    fullTypeName: ScoreEnemy
+    methodName: AllocateScore
+  - assembly: Assembly-CSharp
+    fullTypeName: Blink
+    methodName: DamagedBlink
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: MenuBack
+  - assembly: Assembly-CSharp
     fullTypeName: UIController
     methodName: RestartLevel
   - assembly: Assembly-CSharp
     fullTypeName: UIController
+    methodName: DisablePause
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
     methodName: RestartLevel
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: MenuBack
   - assembly: Assembly-CSharp
     fullTypeName: ScoreController
     methodName: AddScore
@@ -310,7 +359,7 @@ ScriptsOnlyBuild:
     methodName: set_enabled
   - assembly: Assembly-CSharp
     fullTypeName: UIController
-    methodName: QuitLevel
+    methodName: MenuBack
   - assembly: Assembly-CSharp
     fullTypeName: ScoreUI
     methodName: UpdateScore
@@ -323,6 +372,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: Blink
     methodName: IgnoreCollision
+  - assembly: Assembly-CSharp
+    fullTypeName: UIController
+    methodName: RestartLevel
   sceneClasses:
     Assets/Scenes/Game.unity:
     - Class: 1
@@ -351,7 +403,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 72
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -382,7 +440,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3624}
     - Class: 114
-      Script: {instanceID: 3816}
+      Script: {instanceID: 3740}
     - Class: 114
       Script: {instanceID: 3888}
     - Class: 114
@@ -414,47 +472,49 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6198}
     - Class: 114
-      Script: {instanceID: 6536}
+      Script: {instanceID: 6290}
     - Class: 114
-      Script: {instanceID: 6658}
+      Script: {instanceID: 6538}
     - Class: 114
-      Script: {instanceID: 6720}
+      Script: {instanceID: 6660}
     - Class: 114
-      Script: {instanceID: 6752}
+      Script: {instanceID: 6722}
     - Class: 114
-      Script: {instanceID: 6768}
+      Script: {instanceID: 6754}
     - Class: 114
-      Script: {instanceID: 6936}
+      Script: {instanceID: 6770}
     - Class: 114
-      Script: {instanceID: 7150}
+      Script: {instanceID: 6938}
     - Class: 114
-      Script: {instanceID: 7162}
+      Script: {instanceID: 7152}
     - Class: 114
-      Script: {instanceID: 7278}
+      Script: {instanceID: 7164}
     - Class: 114
-      Script: {instanceID: 7326}
+      Script: {instanceID: 7280}
     - Class: 114
-      Script: {instanceID: 7544}
+      Script: {instanceID: 7328}
     - Class: 114
-      Script: {instanceID: 7560}
+      Script: {instanceID: 7546}
     - Class: 114
-      Script: {instanceID: 7796}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 8158}
+      Script: {instanceID: 7798}
     - Class: 114
-      Script: {instanceID: 8908}
+      Script: {instanceID: 8160}
     - Class: 114
-      Script: {instanceID: 8976}
+      Script: {instanceID: 8910}
     - Class: 114
-      Script: {instanceID: 8984}
+      Script: {instanceID: 8978}
     - Class: 114
-      Script: {instanceID: 9154}
+      Script: {instanceID: 8986}
     - Class: 114
-      Script: {instanceID: 9562}
+      Script: {instanceID: 9156}
     - Class: 114
-      Script: {instanceID: 9740}
+      Script: {instanceID: 9564}
     - Class: 114
-      Script: {instanceID: 9850}
+      Script: {instanceID: 9742}
+    - Class: 114
+      Script: {instanceID: 9852}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -462,6 +522,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -488,7 +552,17 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -508,8 +582,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 3222}
     - Class: 114
       Script: {instanceID: 3296}
-    - Class: 114
-      Script: {instanceID: 3816}
     - Class: 114
       Script: {instanceID: 4022}
     - Class: 114
@@ -533,19 +605,21 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6198}
     - Class: 114
-      Script: {instanceID: 6536}
+      Script: {instanceID: 6538}
     - Class: 114
-      Script: {instanceID: 6936}
+      Script: {instanceID: 6938}
     - Class: 114
-      Script: {instanceID: 7150}
+      Script: {instanceID: 7152}
     - Class: 114
-      Script: {instanceID: 7560}
+      Script: {instanceID: 7562}
     - Class: 114
-      Script: {instanceID: 7570}
+      Script: {instanceID: 7572}
     - Class: 114
-      Script: {instanceID: 7766}
+      Script: {instanceID: 7768}
     - Class: 114
-      Script: {instanceID: 8938}
+      Script: {instanceID: 8940}
+    - Class: 114
+      Script: {instanceID: 36618}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -563,12 +637,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 241
-      Script: {instanceID: 0}
-    - Class: 243
-      Script: {instanceID: 0}
-    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -933,6 +1001,12 @@ ScriptsOnlyBuild:
     className: AutoExposure
   - hash:
       serializedVersion: 2
+      Hash: e4edf2f411f4d65c4110b957a8dc7c13
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: EnemyPatrolLogic
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -949,12 +1023,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
-  - hash:
-      serializedVersion: 2
-      Hash: 16742c19934f901d203b6b2a11fc1204
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SetFontFilteringToPoint
   - hash:
       serializedVersion: 2
       Hash: f6831ac80ec81c5d5b370c0ed0fee997
@@ -1071,7 +1139,7 @@ ScriptsOnlyBuild:
     className: ScriptGraphAsset
   - hash:
       serializedVersion: 2
-      Hash: 522fbc88eaf33b8bb7abffa755bae296
+      Hash: f082393579408c42b20eb06f7139fbab
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: HealsSpawn
@@ -1299,7 +1367,7 @@ ScriptsOnlyBuild:
     className: PostProcessResources
   - hash:
       serializedVersion: 2
-      Hash: 06a0d31a3376a4e6384dbb8a3e4ee4f4
+      Hash: 5728b3b9a8d984b1760201223fee0a5c
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Settings
@@ -1413,6 +1481,12 @@ ScriptsOnlyBuild:
     className: DepthOfField
   - hash:
       serializedVersion: 2
+      Hash: c13adf70ec9777b05527d1b32edc4c16
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: BounceEnemyLogic
+  - hash:
+      serializedVersion: 2
       Hash: 751e5bae2a317288c2ab58d66687092b
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -1449,13 +1523,13 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: bec29befbae1beebf113194a34849601
+      Hash: 5cef41656d6e267b17aa9eaeb8b7cdb9
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UIController
   - hash:
       serializedVersion: 2
-      Hash: a73448ab1a355c8501bdf9b41b0bcee8
+      Hash: 35c25c69ae0cd077248bc2261d9125b7
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: WaveData
@@ -1533,7 +1607,7 @@ ScriptsOnlyBuild:
     className: UnityOnTriggerStay2DMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 751e5bae2a317288c2ab58d66687092b
+      Hash: 75eef3ddb2cd3871ea55f564b9ae22e5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: EnemyDeathController
@@ -1927,6 +2001,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: 5629d9581b18151fa67659c110ed0ce7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: AudioManager
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity

@@ -5,7 +5,6 @@ using UnityEngine.Serialization;
 
 public class WaveData : MonoBehaviour
 {
-
     [SerializeField] UpgradesManager upgradesManager;
     [Header("AreaSettings")]
     [SerializeField] private float minX;
@@ -13,9 +12,13 @@ public class WaveData : MonoBehaviour
     [SerializeField] private float minY;
     [SerializeField] private float maxY;
 
-    public Wave[] waves;
+    [SerializeField] Wave[] waves;
     public int nextWave = 0;
     private Wave currentWave;
+
+    [SerializeField] private float warningTime = 1.5f;
+    [SerializeField] private GameObject WarningEnemy;
+    [SerializeField] private GameObject WarningBoss;
 
     private enum SpawnState { Spawning, Waiting, Counting }
     private SpawnState state = SpawnState.Counting;
@@ -27,6 +30,14 @@ public class WaveData : MonoBehaviour
     private void Start()
     {
         currentWave = waves[0];
+    }
+
+
+    public void WaveChange()
+    {
+        nextWave++;
+        upgradesManager.SuggestUpgrade();
+        currentWave = waves[nextWave];
     }
 
 
@@ -53,6 +64,7 @@ public class WaveData : MonoBehaviour
         currentWave.TimeOfWave -= Time.deltaTime;
     }
 
+
     IEnumerator WaveCompleted()
     {
         state = SpawnState.Counting;
@@ -66,13 +78,14 @@ public class WaveData : MonoBehaviour
             yield return new WaitForSeconds(3);
             nextWave++;
             upgradesManager.SuggestUpgrade();
+            AudioManager.Instance.PlaySFX("UpgradeUnavailable");
             currentWave = waves[nextWave];
         }
     }
 
     private bool EnemyIsAlive()
     {
-        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0 && GameObject.FindGameObjectsWithTag("Warning").Length == 0)
         {
             return false;
         }
@@ -87,17 +100,37 @@ public class WaveData : MonoBehaviour
         state = SpawnState.Waiting;
     }
 
+    IEnumerator SpawnEnemy()
+    {
+        Vector2 spawnArea = new Vector2(Random.Range(minX, maxX), Random.Range(minY, maxY));
+        int rnd = Random.Range(0, currentWave.EnemiesInWave.Length);
+        
+        if (currentWave.isWaveBoss == false)
+        {
+            GameObject warning = Instantiate(WarningEnemy, spawnArea, Quaternion.identity);
+            yield return new WaitForSeconds(warningTime);
+            Destroy(warning);
+        }
+       else
+        {
+
+            GameObject warningBoss = Instantiate(WarningBoss, spawnArea, Quaternion.identity);
+            yield return new WaitForSeconds(warningTime);
+            Destroy(warningBoss);
+        }        
+        GameObject enemyToSpawn = currentWave.EnemiesInWave[rnd];
+        Instantiate(enemyToSpawn, spawnArea, Quaternion.identity);
+    }
     private void SpawnEnemies(Wave currentWave)
     {
-        for (int i = 0; i < currentWave.WaveLevel +1; i++)
+        for (int i = 0; i < currentWave.WaveLevel + 1; i++)
         {
-            Vector2 spawnArea = new(Random.Range(minX, maxX), Random.Range(minY, maxY));
-            int rnd = Random.Range(0, currentWave.EnemiesInWave.Length);
-            GameObject enemyToSpawn = currentWave.EnemiesInWave[rnd];
-            Instantiate(enemyToSpawn, spawnArea, Quaternion.identity);
+            StartCoroutine(SpawnEnemy());
+
         }
         currentWave.WaveLevel++;
     }
+
 
     [System.Serializable]
     public class Wave
@@ -109,5 +142,6 @@ public class WaveData : MonoBehaviour
 
         public int WaveLevel;
 
+        public bool isWaveBoss;
     }
 }

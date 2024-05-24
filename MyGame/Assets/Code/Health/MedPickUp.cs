@@ -10,6 +10,7 @@ public class MedPickUp : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<PlayerPhysics>())
         {
+            AudioManager.Instance.PlaySFX("UpgradePick");
             var healthController = collision.gameObject.GetComponent<HealthController>();
 
             healthController.AddHealth(_healthAmount);

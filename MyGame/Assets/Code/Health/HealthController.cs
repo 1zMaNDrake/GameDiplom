@@ -24,7 +24,7 @@ public class HealthController : MonoBehaviour
     private void UpdateSpriteColor()
     {
         float progress = 1f - RemainingHealthPercentage;
-        _spriteRenderer.color = Color.LerpUnclamped(_startColor, Color.black, progress);
+        _spriteRenderer.color = Color.LerpUnclamped(_startColor, new Color(0.3f, 0.3f, 0.3f), progress);
     }
 
     public float RemainingHealthPercentage
@@ -66,10 +66,12 @@ public class HealthController : MonoBehaviour
 
         if (_currentHealth == 0)
         {
+            AudioManager.Instance.PlaySFX("Lose");
             OnDied.Invoke();
         }
         else
         {
+            AudioManager.Instance.PlaySFX("Damage");
             OnDamaged.Invoke();
             
         }

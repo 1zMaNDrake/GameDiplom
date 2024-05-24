@@ -36,9 +36,16 @@ public class PlayerPhysics : MonoBehaviour
 
     private void Update()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + -90f);
+        if (Time.timeScale != 0f)
+        {
+            Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0f, 0f, rotZ + -90f);
+        }
+        else
+        {
+            return;
+        }
 
         if (isDashing)
         {
@@ -88,6 +95,7 @@ public class PlayerPhysics : MonoBehaviour
     {
         for (int i = 0; i < bulletCount; i++)
         {
+            AudioManager.Instance.PlaySFX("Pistol");
             Instantiate(bullet, transform.position, transform.rotation);
             yield return new WaitForSeconds(0.15f);
         }
@@ -98,6 +106,7 @@ public class PlayerPhysics : MonoBehaviour
     private IEnumerator Dash()
     {
         OnDash.Invoke();
+        AudioManager.Instance.PlaySFX("Dash");
         AngleY = 0f;
         _DashBarForegroundImage.fillAmount = 0;
         canDash = false;

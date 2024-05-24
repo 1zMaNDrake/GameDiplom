@@ -77,15 +77,16 @@
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesManager.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\Enemy.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Test.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\AudioManager.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\SniperBullets\Sniper Upgrade.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyLogic.cs" />
     <Compile Include="Assets\Code\Health\HealsSpawn.cs" />
     <Compile Include="Assets\Code\PlayerCode\Player.cs" />
+    <Compile Include="Assets\Code\Interface\Menu UI\Sound.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\HealthUI.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\TimerUI.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Upgrade.cs" />
     <Compile Include="Assets\Code\EnemyCode\BulletForEnemy.cs" />
-    <Compile Include="Assets\Code\SetFontFilteringToPoint.cs" />
     <Compile Include="Assets\Code\EnemyCode\Upgrades\Weapon\SawMovement.cs" />
     <Compile Include="Assets\Code\Interface\Game UI\UIController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\Weapon\HPUp\HPUp.cs" />

@@ -19,7 +19,8 @@ public class Bullet : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
- 
+
+                AudioManager.Instance.PlaySFX("Rocket");
                 hitInfo.collider.GetComponent<HealthController>().TakeDamage(_damageAmount);
                 Debug.Log("Враг получил " + _damageAmount + " Урона!");
                 

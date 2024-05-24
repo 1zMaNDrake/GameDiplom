@@ -34,8 +34,8 @@ Transform:
   m_GameObject: {fileID: 8519737725430879378}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalPosition: {x: -11.6, y: 0.9, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,7 +87,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.15
 --- !u!212 &-3869506701835890027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -129,7 +129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -848584655, guid: 9abc94d642d295f4589e7aed1683f853, type: 3}
+  m_Sprite: {fileID: -173210715, guid: 9abc94d642d295f4589e7aed1683f853, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bc0147c7f110be4b8e3b17ce0bc309b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 2
-  _maximumHealth: 2
+  _currentHealth: 5
+  _maximumHealth: 5
   OnDied:
     m_PersistentCalls:
       m_Calls:
@@ -264,6 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41a66f9b8b4ed9a49b573e2a7765cc26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 5959478123662314563, guid: 40b00521faf41da45af34a0b60a331fb, type: 3}
 --- !u!114 &-9065847887836756117
 MonoBehaviour:
   m_ObjectHideFlags: 0

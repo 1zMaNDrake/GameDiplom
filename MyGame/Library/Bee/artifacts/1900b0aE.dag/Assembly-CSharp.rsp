@@ -407,12 +407,14 @@
 "Assets/Code/Interface/Game UI/UpgradeUI.cs"
 "Assets/Code/Interface/Game UI/WaveUI.cs"
 "Assets/Code/Interface/Menu UI/AlmanacManager.cs"
+"Assets/Code/Interface/Menu UI/AudioManager.cs"
 "Assets/Code/Interface/Menu UI/Enemies.cs"
 "Assets/Code/Interface/Menu UI/Enemy.cs"
 "Assets/Code/Interface/Menu UI/ItemsUI.cs"
 "Assets/Code/Interface/Menu UI/ItemsUIManager.cs"
 "Assets/Code/Interface/Menu UI/MenuManager.cs"
 "Assets/Code/Interface/Menu UI/Settings.cs"
+"Assets/Code/Interface/Menu UI/Sound.cs"
 "Assets/Code/PlayerCode/Bullet.cs"
 "Assets/Code/PlayerCode/Player.cs"
 "Assets/Code/PlayerCode/Upgrades/Test.cs"
@@ -425,7 +427,6 @@
 "Assets/Code/PlayerCode/Upgrades/Weapon/Rockets/RocketUpgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/Weapon/SniperBullets/Sniper Upgrade.cs"
 "Assets/Code/PlayerCode/Upgrades/Weapon/XBullets/XBullets.cs"
-"Assets/Code/SetFontFilteringToPoint.cs"
 "Assets/Code/Waves/WaveData.cs"
 -langversion:9.0
 

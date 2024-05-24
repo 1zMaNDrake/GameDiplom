@@ -6,7 +6,6 @@ using System.Linq;
 
 public class UpgradesUIManager : MonoBehaviour
 {
-
     [SerializeField] private UpgradeUI upgradeUIPrefab;
     [SerializeField] private UpgradesManager upgradeManager;
     [SerializeField] private UpgradeManagerEnemy upgradeManagerEnemy;
@@ -15,7 +14,7 @@ public class UpgradesUIManager : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        foreach(Transform child in transform)
+        foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
@@ -42,6 +41,7 @@ public class UpgradesUIManager : MonoBehaviour
 
     void OnCLickApply(Upgrade upgrade, PlayerPhysics player)
     {
+        AudioManager.Instance.PlaySFX("UpgradePick");
         upgradeManagerEnemy.SuggestUpgradeEnemy();
         upgrade.Apply(player);
         upgradeManager.OnUpgradeApplied(upgrade);

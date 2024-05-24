@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyLogic : MonoBehaviour
 {
     [SerializeField] private float speed = 3;
-
     Transform targetPlayer;
 
     void Start()
