@@ -8,6 +8,7 @@ TagManager:
   - Wallbasic
   - Wallliteral
   - Warning
+  - Level
   layers:
   - Default
   - TransparentFX

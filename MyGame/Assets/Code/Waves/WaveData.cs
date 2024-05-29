@@ -19,6 +19,8 @@ public class WaveData : MonoBehaviour
     [SerializeField] private float warningTime = 1.5f;
     [SerializeField] private GameObject WarningEnemy;
     [SerializeField] private GameObject WarningBoss;
+    [SerializeField] private GameObject LevelUp;
+
 
     private enum SpawnState { Spawning, Waiting, Counting }
     private SpawnState state = SpawnState.Counting;
@@ -32,18 +34,8 @@ public class WaveData : MonoBehaviour
         currentWave = waves[0];
     }
 
-
-    public void WaveChange()
-    {
-        nextWave++;
-        upgradesManager.SuggestUpgrade();
-        currentWave = waves[nextWave];
-    }
-
-
     private void Update()
     {
-
         if (state == SpawnState.Waiting) 
         {
             if (EnemyIsAlive())
@@ -75,11 +67,14 @@ public class WaveData : MonoBehaviour
         }
         else
         {
+            yield return new WaitForSeconds(1);
+            GameObject level = Instantiate(LevelUp, new Vector2(0, 1), Quaternion.identity);
             yield return new WaitForSeconds(3);
             nextWave++;
             upgradesManager.SuggestUpgrade();
             AudioManager.Instance.PlaySFX("UpgradeUnavailable");
             currentWave = waves[nextWave];
+            Destroy(level);
         }
     }
 
@@ -110,6 +105,7 @@ public class WaveData : MonoBehaviour
             GameObject warning = Instantiate(WarningEnemy, spawnArea, Quaternion.identity);
             yield return new WaitForSeconds(warningTime);
             Destroy(warning);
+
         }
        else
         {

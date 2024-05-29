@@ -64,6 +64,7 @@
     <Compile Include="Assets\Code\EnemyCode\Upgrades\UpgradeUIManagerEnemy.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyAttack.cs" />
     <Compile Include="Assets\Code\Interface\Menu UI\AlmanacManager.cs" />
+    <Compile Include="Assets\Code\ShadowEffect.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyPatrolLogic.cs" />
     <Compile Include="Assets\Code\EnemyCode\EnemyDeathController.cs" />
     <Compile Include="Assets\Code\PlayerCode\Upgrades\UpgradesUIManager.cs" />

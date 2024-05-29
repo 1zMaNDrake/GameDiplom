@@ -10,6 +10,7 @@ public class PlayerPhysics : MonoBehaviour
     [SerializeField] private Image _DashBarForegroundImage;
 
     private Rigidbody2D rb;
+    [SerializeField] private TrailRenderer tr;
 
     [SerializeField] private float speed;
     private float AngleX;
@@ -113,9 +114,9 @@ public class PlayerPhysics : MonoBehaviour
         isDashing = true;
 
         rb.velocity = new Vector2(transform.localPosition.x * dashingPower, 0f);
-
+        tr.emitting = true;
         yield return new WaitForSeconds(dashingTime);
-
+        tr.emitting = false;
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
